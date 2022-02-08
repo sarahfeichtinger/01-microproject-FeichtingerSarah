@@ -51,16 +51,14 @@ To either authenticate as user or as admin use the first 2 endpoints in request.
 
 * administration console -> username: admin, password: passme
 
+* hover over master (top left) -> add realm
+- name: quarkus
+
 * clients -> create
 - name: my-quarkus-service
-
-* realm settings -> add realm
-
-* -> settings
-    - name: eg. quarkus
-    - client-protokol: open-id-connect
-    - access-type: confidential
-    - Valid Redirect URIs: http://localhost:8080/api/*
+- client-protocol: open-id-connect
+- access-type: confidential
+- Valid Redirect URIs: http://localhost:8080/api/*
 
 * -> credentials
     - Replace secret in request.http with secret from credential tab
