@@ -1,4 +1,4 @@
-= Kochrezepte
+= Cooking recipes
 sarah feichtinger
 1.0.0, 2021-09-26
 ifndef::imagesdir[:imagesdir: images]
@@ -43,9 +43,40 @@ image:qute.png[]
 
 To either authenticate as user or as admin use the first 2 endpoints in request.http
 
+=== Set up own docker container for keycloak
+
+* run the `+keycloak-up.sh+` script
+
+* http://localhost:8180/
+
+* administration console -> username: admin, password: passme
+
+* clients -> create
+- name: my-quarkus-service
+
+* realm settings -> add realm
+
+* -> settings
+    - name: eg. quarkus
+    - client-protokol: open-id-connect
+    - access-type: confidential
+    - Valid Redirect URIs: http://localhost:8080/api/*
+
+* -> credentials
+    - Replace secret in request.http with secret from credential tab
+
+* Roles -> add role
+    - user
+    - admin
+
+* Users -> add user
+    - username: admin, credentials -> password: passme & temporary: off, role mapping -> user, admin
+    - username: john, credentials -> password: passme & temporary: off, role mapping -> user
+
+
+
 == Start project
 
-* run `+keycloak-up.sh+`
-* run `+create-db.sh+`
-* run `+start-derby-db.sh+`
+* run the `+create-db.sh+` script
+* run the `+start-derby-db.sh+` script
 * run `+./mvnw clean compile quarkus:dev+`
