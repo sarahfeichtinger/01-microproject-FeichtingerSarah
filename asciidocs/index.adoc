@@ -29,7 +29,7 @@ http://localhost:8080/api/q/swagger-ui/
 
 A small html page, listing all ingredients
 
-image::images/qute.png[]
+image::qute.png[]
 
 == Authentication with keycloak
 

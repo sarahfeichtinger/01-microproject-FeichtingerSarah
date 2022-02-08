@@ -1,6 +1,7 @@
 # Default ignored files
 backend/shelf/
 backend/workspace.xml
+.idea
 
 # Datasource local storage ignored files
 backend/dataSources/
@@ -23,4 +24,4 @@ backend/dataSources.local.xml
 
 # Asciidocs
 /asciidocs/.idea
-/asciidocs/.nojekyll
+.env
