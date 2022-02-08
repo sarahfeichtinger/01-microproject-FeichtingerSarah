@@ -41,7 +41,7 @@ image:qute.png[]
 * User
 * Admin
 
-To either authenticate as user or as admin use the first 2 endpoints ins request.http
+To either authenticate as user or as admin use the first 2 endpoints in request.http
 
 == Start project
 
