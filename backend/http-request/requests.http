@@ -1,0 +1,62 @@
+### Authentification for user
+
+POST http://localhost:8180/auth/realms/quarkus/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+client_secret=2c3320a9-6d85-43b8-a9a7-96f4ce4f0db8&client_id=my-quarkus-service&username=john&password=passme&grant_type=password
+
+> {%  client.global.set("access_token", response.body.access_token); %}
+
+
+### Authentification for admin
+
+POST http://localhost:8180/auth/realms/quarkus/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+client_secret=2c3320a9-6d85-43b8-a9a7-96f4ce4f0db8&client_id=my-quarkus-service&username=admin&password=passme&grant_type=password
+
+> {%  client.global.set("access_token", response.body.access_token); %}
+
+
+
+### INGREDIENT
+
+POST http://localhost:8080/api/ingredient
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+
+  {
+    "name": "Yuca",
+    "comment": "Findet man hauptsächlich in Südamerika"
+  }
+### Create
+
+PUT http://localhost:8080/api/ingredient/1
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+
+  {
+    "name": "Mangold",
+    "comment": "Findet man hauptsächlich in Südamerika"
+  }
+### Update
+
+GET http://localhost:8080/api/ingredient
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+### Get Qute html page
+
+GET http://localhost:8080/api/ingredient/getAll
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+### Find all
+
+GET http://localhost:8080/api/ingredient/1
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+### Find certain
+
+DELETE http://localhost:8080/api/ingredient/1
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+### Delete

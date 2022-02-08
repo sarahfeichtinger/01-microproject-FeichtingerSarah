@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vehicles</title>
+</head>
+<style>
+    body {
+        font-family: 'Bahnschrift', Arial, Helvetica, sans-serif;
+    }
+
+    h2{
+        color: chocolate;
+    }
+</style>
+<body>
+<h2>Available ingredients:</h2>
+<br>
+
+<ul>
+    {#for ing in ingredients}
+        <li><b>{ing.name}</b> ({ing.comment})</li>
+    {/for}
+</ul>
+</body>
+</html>

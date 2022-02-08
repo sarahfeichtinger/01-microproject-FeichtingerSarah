@@ -1,0 +1,48 @@
+= Kochrezepte
+sarah feichtinger
+1.0.0, 2021-09-26
+ifndef::imagesdir[:imagesdir: images]
+//:toc-placement!:  // prevents the generation of the doc at this position, so it can be printed afterwards
+:sourcedir: ../src/main/java
+:icons: font
+:sectnums:    // Nummerierung der Überschriften / section numbering
+:toc: left
+
+ifdef::backend-html5[]
+
+== Use-Case-Diagram
+[plantuml, ucd, png, align=left]
+----
+include::plantuml/ucd.puml[]
+----
+
+== Class Diagram
+[plantuml, cld, png, align=left]
+----
+include::plantuml/cld.puml[]
+----
+
+== End-Point documentation:
+http://localhost:8080/api/q/swagger-ui/
+
+== Qute
+
+A small html page, listing all ingredients
+
+image::images/qute.png[]
+
+== Authentication with keycloak
+
+=== Roles
+
+* User
+* Admin
+
+To either authenticate as user or as admin use the first 2 endpoints ins request.http
+
+== Start project
+
+* run `+keycloak-up.sh+`
+* run `+create-db.sh+`
+* run `+start-derby-db.sh+`
+* run `+./mvnw clean compile quarkus:dev+`

@@ -1,0 +1,26 @@
+# Default ignored files
+backend/shelf/
+backend/workspace.xml
+
+# Datasource local storage ignored files
+backend/dataSources/
+backend/dataSources.local.xml
+
+#backend
+/backend/target/
+/backend/.mvn
+/backend/pom.xml.tag
+/backend/pom.xml.releaseBackup
+/backend/pom.xml.versionsBackup
+/backend/release.properties
+/backend/db/
+
+# IntelliJ
+/backend/.idea
+/backend/*.ipr
+/backend/*.iml
+/backend/*.iws
+
+# Asciidocs
+/asciidocs/.idea
+/asciidocs/.nojekyll
