@@ -1,0 +1,49 @@
+@startuml
+
+class Dish
+{
+    -name: String
+    -description: String
+    -minTime: int
+    -tag: Tag
+    -difficulty: Difficulty
+}
+
+class Recipe_Step
+{
+    -step_num: int
+    -amount: int
+    -unit: String
+    -instruction: String
+    -dish: Dish
+    -resource: Resource
+}
+
+class Ingredient
+{
+    -name: String
+    -comment: String
+}
+
+Dish "*" -- "1" Tag
+Dish "*" -- "1" Difficulty
+
+Recipe_Step "*" -- "1" Dish
+Recipe_Step "*" -- "1" Ingredient
+
+
+enum Tag {
+  SUPPE
+  SALAT
+  HAUPTSPEISE
+  NACHTISCH
+  ANDERS
+}
+
+enum Difficulty {
+  EASY
+  NORMAL
+  CHALLENGING
+}
+
+@enduml
