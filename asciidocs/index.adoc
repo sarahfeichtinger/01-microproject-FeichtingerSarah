@@ -22,14 +22,17 @@ include::plantuml/ucd.puml[]
 include::plantuml/cld.puml[]
 ----
 
-== End-Point documentation:
+== Lombok
+Use of lombok setter and getter to keep the code easy
+
+== Endpoint documentation:
 http://localhost:8080/api/q/swagger-ui/
 
 == Qute
 
 A small html page, listing all ingredients
 
-image::qute.png[]
+image:qute.png[]
 
 == Authentication with keycloak
 
