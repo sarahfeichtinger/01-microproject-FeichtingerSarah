@@ -6,6 +6,9 @@ import entity.Ingredient;
 import io.quarkus.qute.CheckedTemplate;
 import io.quarkus.qute.TemplateInstance;
 import io.quarkus.security.identity.SecurityIdentity;
+import org.eclipse.microprofile.graphql.Description;
+import org.eclipse.microprofile.graphql.GraphQLApi;
+import org.eclipse.microprofile.graphql.Query;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 
 import javax.annotation.security.RolesAllowed;
@@ -22,6 +25,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Path("/ingredient")
+@GraphQLApi
 @ApplicationScoped
 public class IngredientService {
 
@@ -53,6 +57,8 @@ public class IngredientService {
 
     @GET
     @Path("/getAll")
+    @Query("allIngredients")
+    @Description("Get all Ingredients available for recipes")
     @RolesAllowed("user")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Ingredient> getAllIngredients() {

@@ -3,7 +3,7 @@
 POST http://localhost:8180/auth/realms/quarkus/protocol/openid-connect/token
 Content-Type: application/x-www-form-urlencoded
 
-client_secret=2c3320a9-6d85-43b8-a9a7-96f4ce4f0db8&client_id=my-quarkus-service&username=john&password=passme&grant_type=password
+client_secret=0b2d1fcc-8b00-4f46-9bef-3ea7f99eb879&client_id=my-quarkus-service&username=john&password=passme&grant_type=password
 
 > {%  client.global.set("access_token", response.body.access_token); %}
 
@@ -13,9 +13,15 @@ client_secret=2c3320a9-6d85-43b8-a9a7-96f4ce4f0db8&client_id=my-quarkus-service&
 POST http://localhost:8180/auth/realms/quarkus/protocol/openid-connect/token
 Content-Type: application/x-www-form-urlencoded
 
-client_secret=2c3320a9-6d85-43b8-a9a7-96f4ce4f0db8&client_id=my-quarkus-service&username=admin&password=passme&grant_type=password
+client_secret=0b2d1fcc-8b00-4f46-9bef-3ea7f99eb879&client_id=my-quarkus-service&username=admin&password=passme&grant_type=password
 
 > {%  client.global.set("access_token", response.body.access_token); %}
+
+
+
+### get graphql scheme
+
+GET http://localhost:8080/api/graphql/schema.graphql
 
 
 

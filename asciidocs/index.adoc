@@ -25,8 +25,15 @@ include::plantuml/cld.puml[]
 == Lombok
 Use of lombok setter and getter to keep the code clean
 
-== Endpoint documentation:
+== Swagger endpoint documentation:
 http://localhost:8080/api/q/swagger-ui/
+
+== SmallRye GraphQL
+A query language for APIs and a runtime for fulfilling those queries with your existing data
+
+http://localhost:8080/api/q/graphql-ui/
+
+image:graphql.png[]
 
 == Qute
 
